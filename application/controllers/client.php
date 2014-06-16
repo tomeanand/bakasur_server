@@ -21,6 +21,7 @@ class Client extends CI_Controller {
       $crud->set_table('clients');	
       $crud->set_subject('Client')
 	   ->required_fields('client_name','email','address','phone');
+     $crud->unset_texteditor('address','full_text');
       $data['gcrud'] = $crud->render();
       $data['main']='home';
       //$data['navigation']='navigation';
