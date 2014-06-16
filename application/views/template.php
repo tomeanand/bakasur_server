@@ -65,8 +65,9 @@
     <div class="row">
       <div class="col-md-1" role="main"></div>
       <div class="col-md-9" role="main">
-      </div>
+      
       <?php $this->load->view($content);?>
+      </div>
     </div>
     <div class="col-md-1" role="main"></div>
   </div>
