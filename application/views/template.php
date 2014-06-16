@@ -42,17 +42,17 @@
               <?php if( $this->session->userdata('username'))  { ?>
               <ul class="nav navbar-nav">
                 <li><a href="<?php echo site_url('menu_list/all')?>">Menu List</a></li>
+
+                 <?php if(!$this->session->userdata('client_id')) { ?>
                 <li><a href="<?php echo site_url('category/list_all')?>">Types</a></li>
                 <li><a href="<?php echo site_url('subcategory/all')?>">Categories</a></li>
                 <li><a href="<?php echo site_url('cuisine/all')?>">Cuisine</a></li>
-
-                <?php if(!$this->session->userdata('client_id')) { ?>
                 <li><a href="<?php echo site_url('client/all')?>">Clients</a></li>
-                <?php } ?>
-
                 <li><a href="<?php echo site_url('groups/all')?>">Groups</a></li>
                 <li><a href="<?php echo site_url('users/all')?>">Users</a></li>
-                <li><a href="<?php echo site_url('auth/logout')?>">Logout</a></li>
+                 <?php } ?>
+                 
+                 <li><a href="<?php echo site_url('auth/logout')?>">Logout</a></li>
                 <?php } ?>
               </ul>
             </div>
