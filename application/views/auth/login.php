@@ -1,6 +1,4 @@
-
 <p><?php //echo lang('login_subheading');?></p>
-
 <div id="infoMessage"><?php //echo $message;?></div>
 <div class="">
     <?php echo form_open("auth/login");?>
@@ -23,11 +21,8 @@
         </div>
         <div>
             <?php echo form_submit('submit', lang('login_submit_btn'));?>
-
         </div>
         <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
-
-
     </fieldset>
     <?php echo form_close();?>
 </div>

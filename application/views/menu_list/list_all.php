@@ -1,4 +1,6 @@
 
+
+
 <?php 
 foreach($gcrud->css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -11,3 +13,12 @@ foreach($gcrud->css_files as $file): ?>
     <div>
 		<?php echo $gcrud->output; ?>
     </div>
+
+
+
+<script>
+	$(document).ready(function(){
+	
+		$(".imageBtn").click(function()	{	console.log($(".imageBtn"));});
+	});
+</script>

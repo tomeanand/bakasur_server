@@ -1,5 +1,14 @@
 $(function(){
-	$('.numeric').numeric();
+	try	{
+		if($('.numeric'))	{
+			$('.numeric').numeric();
+		}
+		else	{
+			return;
+		}
+	}
+	catch(e)	{console.log(e)}
+	
 	$('.numeric').keydown(function(e){
 		
 		if(e.keyCode == 38)

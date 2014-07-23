@@ -25,7 +25,8 @@ class Client extends CI_Controller {
       $data['gcrud'] = $crud->render();
       $data['main']='home';
       //$data['navigation']='navigation';
-      $data['content'] = 'menu_list/list_all';
+      $data['client_id'] = $this->session->userdata('client_id');
+      //$data['content'] = 'menu_list/list_all';
       $this->load->view('template',$data);
     }
  

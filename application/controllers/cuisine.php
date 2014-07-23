@@ -24,8 +24,9 @@ class Cuisine extends CI_Controller {
 	     ->required_fields('cuisine_name');
 	$data['gcrud'] = $crud->render();
 	$data['main']='home';
+	$data['client_id'] = $this->session->userdata('client_id');
 	//$data['navigation']='navigation';
-	$data['content'] = 'cuisine/list_all';
+	//$data['content'] = 'cuisine/list_all';
 	$this->load->view('template',$data);
     }
     

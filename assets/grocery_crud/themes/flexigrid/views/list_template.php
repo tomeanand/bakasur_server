@@ -43,51 +43,44 @@ if($success_message !== null){?>
 ?></div>
 <div class="flexigrid" style='width: 100%;' data-unique-hash="<?php echo $unique_hash; ?>">
 	<div id="hidden-operations" class="hidden-operations"></div>
-	<div class="mDiv">
+	<!-- <div class="mDiv">
 		<div class="ftitle">
 			&nbsp;
 		</div>
 		<div title="<?php echo $this->l('minimize_maximize');?>" class="ptogtitle">
 			<span></span>
 		</div>
-	</div>
+	</div> -->
 	<div id='main-table-box' class="main-table-box">
 
 	<?php if(!$unset_add || !$unset_export || !$unset_print){?>
 	<div class="tDiv">
-	<div class="row">
-		<div class="col-md-6">
+	<div class="row topbuttonpadding">
+		<div class="span6">
 			<?php if(!$unset_add){?>
 			<div class="tDiv2">
-	        	<a href='<?php echo $add_url?>' title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>' class='add-anchor add_button'>
-				<div class="fbutton btn btn-primary">
-					<div>
-						<span class="add icon-plus-2">&nbsp;<?php echo $this->l('list_add'); ?> <?php echo $subject?></span>
-					</div>
-				</div>
+	        	<a href='<?php echo $add_url?>' title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>' class='add-anchor add_button button primary icon-plus'>
+				<?php echo $this->l('list_add'); ?> <?php echo $subject?>
 	            </a>
 
 			</div>
 			<?php }?>
 			</div>
-		<div class="col-md-6">
+		<div class="span6">
 			<div class="tDiv3">
 			<?php if(!$unset_export) { ?>
-        	<a class="export-anchor btn btn-primary" data-url="<?php echo $export_url; ?>" target="_blank">
-				<div class="fbutton">
+        	<a class="export-anchor  button primary icon-file-excel" data-url="<?php echo $export_url; ?>" target="_blank">
+				<?php echo $this->l('list_export');?>
+				<!-- <div class="fbutton">
 					<div>
 						<span class="icon-file-excel">&nbsp;<?php echo $this->l('list_export');?></span>
 					</div>
-				</div>
+				</div> -->
             </a>
 			<?php } ?>
 			<?php if(!$unset_print) { ?>
-        	<a class="print-anchor btn btn-primary" data-url="<?php echo $print_url; ?>">
-				<div class="fbutton">
-					<div>
-						<span class="icon-printer">&nbsp;<?php echo $this->l('list_print');?></span>
-					</div>
-				</div>
+        	<a class="print-anchor button primary icon-printer" data-url="<?php echo $print_url; ?>"><?php echo $this->l('list_print');?>
+				
             </a>
 			
 			<?php }?>
@@ -104,17 +97,17 @@ if($success_message !== null){?>
 		<?php echo $list_view?>
 	</div>
 	<?php echo form_open( $ajax_list_url, 'method="post" id="filtering_form" class="filtering_form" autocomplete = "off" data-ajax-list-info-url="'.$ajax_list_info_url.'"'); ?>
-	<div class="sDiv controlBox" id='quickSearchBox'>
+	<div class="sDiv controlBox mcbox" id='quickSearchBox'>
 		<div class="sDiv2">
 			<div class="row">
-				<div class="col-md-10">
+				<div class="span10">
 				<div class="row">
-					<div class="col-md-5 ">
-						<div class="form-group">
+					<div class="span5 ">
+						<div class="form-group input-control text">
 							<input type="text" class="qsbsearch_fieldox search_text form-control" name="search_text" size="30" id='search_text' placeholder="<?php echo $this->l('list_search');?>">
 						</div>
 					</div>
-					<div class="col-md-7">
+					<div class="span7">
 						<div class="picker1">
 							<select name="search_field" id="search_field">
 								<option value=""><?php echo $this->l('list_search_all');?></option>
@@ -128,7 +121,7 @@ if($success_message !== null){?>
 							
 
 				</div>
-				<div class="col-md-2">
+				<div class="span2">
 					 <input type="button"  value="<?php echo $this->l('list_search');?>" class="btn btn-primary crud_search" id='crud_search'>
 				</div>
 
@@ -145,17 +138,17 @@ if($success_message !== null){?>
         </div>
 	</div>
 	<div class="pDiv">
-		<div class="pDiv2">
+		<div class="pDiv2 grid">
 		<div class="row">
-			<div class="col-md-3">
-				<div class="pGroup controlBox">
+			<div class="span3">
+				<div class="pGroup controlBox ">
 					<div class="pcontrol">
 						<div class="row">
-						<div class="col-md-2 mt5"><span class="">
+						<div class="span2 mt5"><span class="">
 								<?php list($show_lang_string, $entries_lang_string) = explode('{paging}', $this->l('list_show_entries')); ?>
-								<?php echo $show_lang_string; ?></span>
+								<?php //echo $show_lang_string; ?></span>
 							</div>
-							<div class="col-md-3">
+							<div class="span3">
 								<div class="picker2">
 									<select name="per_page" id='per_page' class="per_page select">
 										<?php foreach($paging_options as $option){?>
@@ -164,50 +157,52 @@ if($success_message !== null){?>
 									</select>
 								</div>
 							</div>
-							<div class="col-md-1 mt5">
-								<?php echo $entries_lang_string; ?>
+							<div class="span2 mt5">
+								<?php //echo $entries_lang_string; ?>
 								<input type='hidden' name='order_by[0]' id='hidden-sorting' class='hidden-sorting' value='<?php if(!empty($order_by[0])){?><?php echo $order_by[0]?><?php }?>' />
 								<input type='hidden' name='order_by[1]' id='hidden-ordering' class='hidden-ordering'  value='<?php if(!empty($order_by[1])){?><?php echo $order_by[1]?><?php }?>'/>
 
 							</div>
-							<div class="col-md-4"></div>
+							<div class="span4"></div>
 						</div>
 					</div>
 			</div>
 			</div>
-			<div class="col-md-9">
+			<div class="span9">
 			
 
 					<div class="row mt5">
-						<div class="col-md-1">
+						<div class="span1">
 							<div class="pFirst pButton first-button mt10">
 								<span class="icon-first"></span>
 							</div>
 						</div>
-						<div class="col-md-1">
+						<div class="span1">
 							<div class="pPrev pButton prev-button">
 								<span class="icon-arrow-left-4" style="font-size:30px;"></span>
 							</div>
 						</div>
-						<div class="col-md-1 mt5"><?php echo $this->l('list_page'); ?></div>
-						<div class="col-md-2 mt5"><input name='page' type="text" value="1" size="4" id='crud_page' class="crud_page form-control"></div>
-						<div class="col-md-1 mt5" style="padding-left:0px;"><?php echo $this->l('list_paging_of'); ?>&nbsp;<?php echo ceil($total_results / $default_per_page)?></div>
-						<div class="col-md-1">
+						<div class="span1 mt5"><?php echo $this->l('list_page'); ?></div>
+						<div class="span2 mt5">
+						<div class="input-control text"><input name='page' type="text" value="1" size="4" id='crud_page' class="crud_page form-control"></div>
+						</div>
+						<div class="span1 mt5" style="padding-left:0px;"><?php echo $this->l('list_paging_of'); ?>&nbsp;<?php echo ceil($total_results / $default_per_page)?></div>
+						<div class="span1">
 							<div class="pNext pButton next-button" >
 								<span class="icon-arrow-right-4" style="font-size:30px;"></span>
 							</div>
 						</div>
-						<div class="col-md-1" >
+						<div class="span1" >
 							<div class="pLast pButton last-button mt10">
 								<span class="icon-last"></span>
 							</div>
 						</div>
-						<div class="col-md-1 mt5" style="font-size:18px;">
+						<div class="span1 mt5" style="font-size:18px;">
 							<div class="pReload pButton ajax_refresh_and_loading" id='ajax_refresh_and_loading'>
 								<span class="icon-cycle"></span>
 							</div>
 						</div>
-						<div class="col-md-2 mt5">
+						<div class="span2 mt5">
 							<?php $paging_starts_from = "<span id='page-starts-from' class='page-starts-from'>1</span>"; ?>
 					<?php $paging_ends_to = "<span id='page-ends-to' class='page-ends-to'>". ($total_results < $default_per_page ? $total_results : $default_per_page) ."</span>"; ?>
 					<?php $paging_total_results = "<span id='total_items' class='total_items'>$total_results</span>"?>

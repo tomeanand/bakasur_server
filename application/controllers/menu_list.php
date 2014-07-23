@@ -12,7 +12,9 @@ class Menu_list extends CI_Controller {
     
     
     public function index(){	
-	redirect('menu_list/all');
+
+	   redirect('menu_list/all');
+
     }
     
     public function all(){
@@ -60,11 +62,12 @@ class Menu_list extends CI_Controller {
       $data['main']='home';
       //$data['navigation']='navigation';
       $data['content'] = 'menu_list/list_all';
+      //$data['client_id'] = $this->session->userdata('client_id');
       $this->load->view('template',$data);
     }
     
   public function _callback_image_url($value,$row){
-    return '<a target="_blank" class="btn minis danger" href="'.site_url('image/all/'.$row->menu_id).'">View Images</a>';
+    return '<a target="_blank" class="button mini" href="'.site_url('image/all/'.$row->menu_id).'">View Images</a>';
   }
 
 
