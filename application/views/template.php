@@ -55,12 +55,12 @@
         <nav class="sidebar light">
             <ul>
                 <li class="title">Quick Links</li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-chart-alt"></i>App Metrics</a></li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-chart-alt"></i>App Metrics</a></li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-chart-alt"></i>App Metrics</a></li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-chart-alt"></i>App Metrics</a></li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-chart-alt"></i>App Metrics</a></li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-chart-alt"></i>App Metrics</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-user"></i>Customer List</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-basket"></i>Orders Placed</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-thumbs-up"></i>Orders Delivered</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-stats-up"></i>Analytics</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-mail"></i>Notification</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-equalizer"></i>Settings</a></li>
             </ul>
         </nav>
       <?php } ?>  
