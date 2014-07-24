@@ -17,8 +17,11 @@ foreach($gcrud->css_files as $file): ?>
 
 
 <script>
+function openMe()	{
+	console.log("hi there");
+}
 	$(document).ready(function(){
-	
-		$(".imageBtn").click(function()	{	console.log($(".imageBtn"));});
+	console.log($(".mini"));
+		$(".mini").click(function()	{	console.log($(".imageBtn"));});
 	});
 </script>

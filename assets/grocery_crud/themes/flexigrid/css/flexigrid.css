@@ -322,18 +322,18 @@ table th
 }*/
 .flexigrid div.form-div textarea
 {
-	font-size: 15px;
+	/*font-size: 15px;
 	border: 1px solid #AAA;
 	padding: 5px 5px 5px 5px;
-	background: #fafafa;
+	background: #fafafa;*/
 }
 
 .flexigrid div.form-div textarea:hover,
 /*.flexigrid div.form-div input[type=text]:hover,*/
 .flexigrid div.form-div select:hover
 {
-	border: 1px solid #555;
-	background: #fff;
+	/*border: 1px solid #555;
+	background: #fff;*/
 }
 /*.flexigrid div.form-div textarea:focus, .flexigrid div.form-div input[type=text]:focus, .flexigrid div.form-div select:focus
 {
@@ -350,9 +350,9 @@ div.form-div input.datetime-input
 }
 .form-field-box
 {
-	padding: 5px 10px;
+	/*padding: 5px 10px;
 	margin: 0px 0px 5px 0px;
-	min-height: 30px;
+	min-height: 30px;*/
 }
 .form-field-box.odd
 {
@@ -867,8 +867,8 @@ ul.chzn-choices li.search-field input
 }
 textarea.texteditor, textarea.mini-texteditor
 {
-	width:750px;
-	height: 200px;
+	/*width:750px;
+	height: 200px;*/
 }
 .flexigrid div.form-div{ 
   font-size: 14px;

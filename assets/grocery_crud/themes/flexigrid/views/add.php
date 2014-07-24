@@ -7,6 +7,9 @@
 	$this->set_js_lib($this->default_javascript_path.'/jquery_plugins/jquery.noty.js');
 	$this->set_js_lib($this->default_javascript_path.'/jquery_plugins/config/jquery.noty.config.js');
 ?>
+<style>
+	.metro .input-control.textarea textarea {min-height:50px;height: 50px;width: 300px;}
+</style>
 <div class="flexigrid crud-form" style='width: 100%;' data-unique-hash="<?php echo $unique_hash; ?>">
 	<div class="mDiv">
 		<div class="ftitle">
@@ -29,7 +32,7 @@
 					$even_odd = $counter % 2 == 0 ? 'odd' : 'even';
 					$counter++;
 			?>
-			<div class='form-field-box <?php echo $even_odd?>' id="<?php echo $field->field_name; ?>_field_box">
+			<div class='form-field-box input-control text textarea <?php echo $even_odd?>' id="<?php echo $field->field_name; ?>_field_box">
 				<div class='form-display-as-box' id="<?php echo $field->field_name; ?>_display_as_box">
 					<?php echo $input_fields[$field->field_name]->display_as; ?><?php echo ($input_fields[$field->field_name]->required)? "<span class='required'>*</span> " : ""; ?> :
 				</div>
@@ -39,6 +42,7 @@
 				<div class='clear'></div>
 			</div>
 			<?php }?>
+
 			<!-- Start of hidden inputs -->
 				<?php
 					foreach($hidden_fields as $hidden_field){
@@ -51,16 +55,16 @@
 			<div id='report-error' class='report-div error'></div>
 			<div id='report-success' class='report-div success'></div>
 		</div>
-		<div class="pDiv">
+		<div class="pDiv"><br>
 			<div class='form-button-box'>
-				<input id="form-button-save" type='submit' value='<?php echo $this->l('form_save'); ?>'  class="btn btn-large"/>
+				<input id="form-button-save" type='submit' value='<?php echo $this->l('form_save'); ?>'  class="button primary"/>
 			</div>
 <?php 	if(!$this->unset_back_to_list) { ?>
 			<div class='form-button-box'>
-				<input type='button' value='<?php echo $this->l('form_save_and_go_back'); ?>' id="save-and-go-back-button"  class="btn btn-large"/>
+				<input type='button' value='<?php echo $this->l('form_save_and_go_back'); ?>' id="save-and-go-back-button"  class="button primary"/>
 			</div>
 			<div class='form-button-box'>
-				<input type='button' value='<?php echo $this->l('form_cancel'); ?>' class="btn btn-large" id="cancel-button" />
+				<input type='button' value='<?php echo $this->l('form_cancel'); ?>' class="button primary" id="cancel-button" />
 			</div>
 <?php 	} ?>
 			<div class='form-button-box'>
