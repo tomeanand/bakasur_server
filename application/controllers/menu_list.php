@@ -64,8 +64,7 @@ class Menu_list extends CI_Controller {
   }
 
   public function _callback_image_url($value,$row){
-//return '<a target="_blank" class="button mini" href="'.site_url('image/all/'.$row->menu_id).'">View Images</a>';
-    return '<a  class="button mini" click="openMe()">View Images</a>';
+    return '<a class="button mini" alt="'.site_url('image/all/'.$row->menu_id).'">View Images</a>';
   }
 
 

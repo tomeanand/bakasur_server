@@ -17,11 +17,24 @@ foreach($gcrud->css_files as $file): ?>
 
 
 <script>
-function openMe()	{
-	console.log("hi there");
-}
+
 	$(document).ready(function(){
-	console.log($(".mini"));
-		$(".mini").click(function()	{	console.log($(".imageBtn"));});
+		var dialog = $('#dialog');
+		dialog.dialog({ height:400,width:600,autoOpen: false});
+		$('.mini').live('click',function(){
+			var url_to_load = ($(this).attr('alt'));
+			$('#divInDialog').load(url_to_load, function() {
+				$(".sidebar").hide();
+				$(".navigation-bar").hide();
+				$(".bs-footer").hide();
+			})
+			dialog.dialog("open");
+		});
 	});
+
 </script>
+
+
+
+
+<div id="dialog" title="Upload Menu images"><div id='divInDialog' style='width:600px; height:400px;'></div></div>
