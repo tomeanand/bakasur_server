@@ -206,3 +206,5 @@ body {
 .mt5{margin-top: 5px;}
 .mt10{margin-top: 10px;}
 .ml150{margin-left: 150px;}
+/*for grocerycrud down*/
+.mcbox{margin-top: 10px; border-top: 1px solid #999!important;padding-top: 10px; margin-bottom: 10px; border-bottom:1px solid #999!important; }

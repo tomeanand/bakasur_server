@@ -7,89 +7,83 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Le styles -->
-  <link rel="stylesheet" type="text/css" href="<?php print base_url()?>assets/css/metro-bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="<?php print base_url()?>assets/css/metro-bootstrap.min.css">
   <link rel="stylesheet" href="<?php print base_url()?>assets/css/iconFont.css">
-  <link rel="stylesheet" href="<?php print base_url()?>assets/css/docs.css">
-</head>
-<body>
-  <!-- Static navbar -->
-  <div class="navbar navbar-default navbar-static-top bsnavbar">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar">dd</span>
-          <span class="icon-bar">cc</span>
-          <span class="icon-bar">ee</span>
-        </button>
-        <a class="navbar-brand"><img src="<?php print base_url()?>assets/images/logo_100.png"></a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <div class="navbar-left ml150">
-          <div class=""></div>
-          <nav class="navbar navbar-default" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <?php if( $this->session->userdata('username'))  { ?>
-              <ul class="nav navbar-nav">
-                <li><a href="<?php echo site_url('menu_list/all')?>">Menu List</a></li>
+  <link rel="stylesheet" href="<?php print base_url()?>assets/css/docs.css"> -->
+    <link href="<?php print base_url()?>assets/css/metro/metro-bootstrap.css?v=2" rel="stylesheet">
+    <link href="<?php print base_url()?>assets/css/metro/metro-bootstrap-responsive.css" rel="stylesheet">
+    <link href="<?php print base_url()?>assets/css/metro/iconFont.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php print base_url()?>assets/css/docs.css">  
 
-                 <?php if(!$this->session->userdata('client_id')) { ?>
-                <li><a href="<?php echo site_url('category/list_all')?>">Types</a></li>
-                <li><a href="<?php echo site_url('subcategory/all')?>">Categories</a></li>
-                <li><a href="<?php echo site_url('cuisine/all')?>">Cuisine</a></li>
-                <li><a href="<?php echo site_url('client/all')?>">Clients</a></li>
-                <li><a href="<?php echo site_url('groups/all')?>">Groups</a></li>
-                <li><a href="<?php echo site_url('users/all')?>">Users</a></li>
-                 <?php } ?>
-                 
-                 <li><a href="<?php echo site_url('auth/logout')?>">Logout</a></li>
-                <?php } ?>
-              </ul>
+
+
+</head>
+<body class="metro">
+  <!-- Static navbar -->
+
+            <div class="navigation-bar" style="margin-bottom:20px;">
+                <div class="navigation-bar-content" style="height:150px">
+                    <a href="/" class="element" style="height:150px">
+                    <span class=""></span> <img src="<?php print base_url()?>assets/images/logo_100.png"></sup>
+                    </a>
+                    <span class="element-divider" style="height:150px"></span>
+
+                    <a class="pull-menu" href="#"></a>
+                    <ul class="element-menu drop-up" style="margin-top:50px">
+                     <?php if( $this->session->userdata('username'))  { ?>
+                        <li><a href="<?php echo site_url('menu_list/all')?>">Menu List</a></li>
+                        <?php if(!$this->session->userdata('client_id')) { ?>
+                          <li><a href="<?php echo site_url('category/list_all')?>">Types</a></li>
+                          <li><a href="<?php echo site_url('subcategory/all')?>">Categories</a></li>
+                          <li><a href="<?php echo site_url('cuisine/all')?>">Cuisine</a></li>
+                          <li><a href="<?php echo site_url('client/all')?>">Clients</a></li>
+                          <li><a href="<?php echo site_url('groups/all')?>">Groups</a></li>
+                          <li><a href="<?php echo site_url('users/all')?>">Users</a></li>
+                        <?php } ?>
+                        <li><a href="<?php echo site_url('auth/logout')?>">Logout</a></li>
+                       <?php } ?>
+                    </ul>
+                </div>
             </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container bs-docs-container">
-    <div class="row">
-      <div class="col-md-1" role="main"></div>
-      <div class="col-md-10" role="main">
+
+
+<div class="grid fluid">
+  <div class="row padding20">
+    <div class="span2">
       
-      <?php $this->load->view($content);?>
-      </div>
+<?php if( $this->session->userdata('username'))  { ?>
+        <nav class="sidebar light">
+            <ul>
+                <li class="title">Quick Links</li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-user"></i>Customer List</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-basket"></i>Orders Placed</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-thumbs-up"></i>Orders Delivered</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-stats-up"></i>Analytics</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-mail"></i>Notification</a></li>
+                 <li class="stick bg-emerald"><a  href="#"><i class="icon-equalizer"></i>Settings</a></li>
+            </ul>
+        </nav>
+      <?php } ?>  
+
     </div>
-    <div class="col-md-1" role="main"></div>
+    <div class="span10"><?php $this->load->view($content);?></div>
   </div>
 </div>
+
+
 <footer class="bs-footer" role="contentinfo">
   <div class="container">
-    © 2014 www.bakasur.mxbit.co.in All rights resereved -  <a href="http://mxbit.co.in">mxbit technology innovations pvt ltd</a>
+    <blockquote class="place-right">
+    <small> © 2014 www.bakasur.mxbit.co.in All rights resereved -  <a href="http://mxbit.co.in">mxbit technology innovations pvt ltd</a></small>
+</blockquote>
+   
   </div>
 </footer>
-<script type="text/javascript">
 
-// var _gaq = _gaq || [];
-// _gaq.push(['_setAccount', 'UA-36060270-1']);
-// _gaq.push(['_trackPageview']);
-
-// (function() {
-//   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-//   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-//   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-// })();
-
-</script>
+   <!-- <script src="<?php print base_url()?>assets/js/metro/jquery/jquery_v2.0.1.js"></script>-->
+    <script src="<?php print base_url()?>assets/js/metro/jquery/jquery.widget.min.js"></script>
+    <script src="<?php print base_url()?>assets/js/metro/metro.min.js">
+    <script src="<?php print base_url()?>assets/js/metro/metro/metro-dropdown.js"></script> 
 </body>
 </html>
 

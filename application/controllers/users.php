@@ -36,6 +36,7 @@ class Users extends CI_Controller {
 	$data['gcrud'] = $crud->render();
 	$data['main']='home';
 	//$data['navigation']='navigation';
+	//$data['client_id'] = $this->session->userdata('client_id');
 	$data['content'] = 'users/list_all';
 	$this->load->view('template',$data);
     }

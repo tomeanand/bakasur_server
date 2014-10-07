@@ -214,8 +214,14 @@ $('.ptogtitle').hide();
 			}
 		});
 	});
-
-	$('.crud_page').numeric();
+	
+	try	{
+		if($('.crud_page'))	{
+			$('.crud_page').numeric();
+		}
+	}
+	catch(e)	{console.log(e)}
+	
 
 
 	if ($('.flexigrid').length == 1) {	 //disable cookie storing for multiple grids in one page

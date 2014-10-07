@@ -10,3 +10,12 @@ foreach($gcrud->css_files as $file): ?>
 <div>
 	<?php echo $gcrud->output; ?>
 </div>
+
+<script>
+	$(document).ready(function(){
+		// $(".sidebar").hide();
+		// $(".navigation-bar").hide();
+		// $(".bs-footer").hide();
+		
+	});
+</script>

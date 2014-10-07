@@ -29,6 +29,7 @@ class Category extends CI_Controller {
 	$data['main']='home';
 	//$data['navigation']='navigation';
 	$data['content'] = 'category/list_all';
+    //$data['client_id'] = $this->session->userdata('client_id');
 	$this->load->view('template',$data);
     }
 
@@ -48,6 +49,7 @@ class Category extends CI_Controller {
 	    }
 	}	
 	$data['category_list'] = $category;
+
 	$this->load->view('category/view_all',$data);
     }
     
