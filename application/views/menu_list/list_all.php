@@ -24,9 +24,10 @@ foreach($gcrud->css_files as $file): ?>
 		$('.mini').live('click',function(){
 			var url_to_load = ($(this).attr('alt'));
 			$('#divInDialog').load(url_to_load, function() {
-				$(".sidebar").hide();
-				$(".navigation-bar").hide();
-				$(".bs-footer").hide();
+				//console.log($(this).children().find(".sidebar"));
+				$(this).children().find(".sidebar").hide();
+				$(this).children().find(".navigation-bar-content").hide();
+				$(this).children().find("footer").hide();
 			})
 			dialog.dialog("open");
 		});

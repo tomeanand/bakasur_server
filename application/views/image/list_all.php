@@ -13,9 +13,9 @@ foreach($gcrud->css_files as $file): ?>
 
 <script>
 	$(document).ready(function(){
-		$(".sidebar").hide();
-		$(".navigation-bar").hide();
-		$(".bs-footer").hide();
+		// $(".sidebar").hide();
+		// $(".navigation-bar").hide();
+		// $(".bs-footer").hide();
 		
 	});
 </script>
