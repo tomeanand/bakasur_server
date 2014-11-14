@@ -51,5 +51,18 @@ class Menu extends REST_Controller
         $this->response($menu_result, 200); 
     }
 
+ public function score_get()    {
+    $insert_data = array('name' => $this->get('name')
+        ,'email' => $this->get('email')
+        ,'phone' => $this->get('phone')
+        ,'attempted' => $this->get('attempted')
+        ,'scored' => $this->get('scored'));
+
+$this->load->model('score_model');
+$this->score_model->save_result($insert_data);
+$data = array('status'=> "success", $this->get());
+$this->response($data);
+}
+
 	
 }
