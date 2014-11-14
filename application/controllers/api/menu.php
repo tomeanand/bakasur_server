@@ -65,4 +65,42 @@ $this->response($data);
 }
 
 	
+    public function customer_get()  {
+
+        $this->response( array('name' => 'Shiva' ), 200); 
+    }
+
+    public function customer_post() {
+        $isInitial = $this->post('initial');
+        $email = $this->post('email');
+        $this->load->model('customer_model','cmodel');
+        $has_user = $this->cmodel->has_user_registered($email);
+        //print_r($has_user);
+        //print_r('expression');
+        if($isInitial && $has_user == 0)    {
+            $insert_data = array('customer_name' => $this->post('name'),
+                                'customer_gid' => $this->post('id'), 
+                                'customer_email' => $email, 
+                                'customer_gender' => $this->post('gender'), 
+                                'customer_info' => json_encode($this->post()) ) ;
+
+            $result = $this->cmodel->add_user($insert_data);
+            //print_r($result);
+
+        }
+        else   {
+            $addr_2 = $this->post('addr_2') ? $this->post('addr_2') : "";
+            $alt_phone = $this->post('alt_phone') ? $this->post('alt_phone') : "";
+
+            $update_data = array('customer_addr_line_1' => $this->post('addr_1'),
+                                'customer_addr_line_2' => $addr_2, 
+                                'customer_phone' => $this->post('phone'), 
+                                'customer_alt_phone' => $alt_phone);
+
+            $this->cmodel->update_user($email, $update_data);
+        }
+
+        $this->response( array('status' => true ), 200); 
+    }
+
 }
