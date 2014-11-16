@@ -51,18 +51,18 @@ class Menu extends REST_Controller
         $this->response($menu_result, 200); 
     }
 
- public function score_get()    {
-    $insert_data = array('name' => $this->get('name')
-        ,'email' => $this->get('email')
-        ,'phone' => $this->get('phone')
-        ,'attempted' => $this->get('attempted')
-        ,'scored' => $this->get('scored'));
+    public function score_get()    {
+        $insert_data = array('name' => $this->get('name')
+            ,'email' => $this->get('email')
+            ,'phone' => $this->get('phone')
+            ,'attempted' => $this->get('attempted')
+            ,'scored' => $this->get('scored'));
 
-$this->load->model('score_model');
-$this->score_model->save_result($insert_data);
-$data = array('status'=> "success", $this->get());
-$this->response($data);
-}
+        $this->load->model('score_model');
+        $this->score_model->save_result($insert_data);
+        $data = array('status'=> "success", $this->get());
+        $this->response($data);
+    }
 
 	
     public function customer_get()  {
@@ -75,8 +75,7 @@ $this->response($data);
         $email = $this->post('email');
         $this->load->model('customer_model','cmodel');
         $has_user = $this->cmodel->has_user_registered($email);
-        //print_r($has_user);
-        //print_r('expression');
+        
         if($isInitial && $has_user == 0)    {
             $insert_data = array('customer_name' => $this->post('name'),
                                 'customer_gid' => $this->post('id'), 
@@ -85,7 +84,6 @@ $this->response($data);
                                 'customer_info' => json_encode($this->post()) ) ;
 
             $result = $this->cmodel->add_user($insert_data);
-            //print_r($result);
 
         }
         else   {
@@ -101,6 +99,26 @@ $this->response($data);
         }
 
         $this->response( array('status' => true ), 200); 
+    }
+
+    public function orders_get()    {
+        $this->load->model('order_model','omodel');
+        $order_query = $this->omodel->get_order_by_user( $this->get('userid') );
+       // $items 
+          if($order_query->num_rows() > 0)  {
+            $items = $order_query->result();
+            $this->response( array('status' => true, 'item' => $items ), 200); 
+          }
+          else  {
+            $this->response( array('status' => false, 'id' => $this->get('userid') ), 200); 
+          }
+    }
+
+    public function orders_post()   {
+        $this->load->model('order_model','omodel');
+        $result = $this->omodel->add_order($this->post());
+
+        $this->response( array('status' => true, 'order_id' => $result ), 200); 
     }
 
 }
