@@ -20,6 +20,11 @@ class Order_model extends CI_Model{
         $this->db->where('order_customer_id',$id);
         return $this->db->get($this->__table);          
      }
+
+    public function get_order_by_id($id){
+        $this->db->where('order_id',$id);
+        return $this->db->get($this->__table);          
+     }
          
 
     
