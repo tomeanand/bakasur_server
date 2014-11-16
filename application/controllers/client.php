@@ -26,7 +26,7 @@ class Client extends CI_Controller {
       $data['main']='home';
       //$data['navigation']='navigation';
       $data['client_id'] = $this->session->userdata('client_id');
-      //$data['content'] = 'menu_list/list_all';
+      $data['content'] = 'menu_list/list_all';
       $this->load->view('template',$data);
     }
  

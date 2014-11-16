@@ -26,7 +26,7 @@ class Cuisine extends CI_Controller {
 	$data['main']='home';
 	$data['client_id'] = $this->session->userdata('client_id');
 	//$data['navigation']='navigation';
-	//$data['content'] = 'cuisine/list_all';
+	$data['content'] = 'cuisine/list_all';
 	$this->load->view('template',$data);
     }
     

@@ -55,8 +55,8 @@
         <nav class="sidebar light">
             <ul>
                 <li class="title">Quick Links</li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-user"></i>Customer List</a></li>
-                 <li class="stick bg-emerald"><a  href="#"><i class="icon-basket"></i>Orders Placed</a></li>
+                 <li class="stick bg-emerald"><a  href="<?php echo site_url('customers/all')?>"><i class="icon-user"></i>Customer List</a></li>
+                 <li class="stick bg-emerald"><a  href="<?php echo site_url('orders/all')?>"><i class="icon-basket"></i>Orders Placed</a></li>
                  <li class="stick bg-emerald"><a  href="#"><i class="icon-thumbs-up"></i>Orders Delivered</a></li>
                  <li class="stick bg-emerald"><a  href="#"><i class="icon-stats-up"></i>Analytics</a></li>
                  <li class="stick bg-emerald"><a  href="#"><i class="icon-mail"></i>Notification</a></li>

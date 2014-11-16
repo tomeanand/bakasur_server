@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/restaurant/';
+$config['base_url']	= 'http://localhost/bakasurserver/';
 
 /*
 |--------------------------------------------------------------------------
