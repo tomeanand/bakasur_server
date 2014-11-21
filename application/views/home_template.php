@@ -86,17 +86,8 @@
               <div class="item">
                 <h1>Customize your menu in seconds!</h1>
               </div>
-
-
-
-
-            </div>
-
-
+             </div>
           </div>
-
-          
-
         </div>
       </div>
     </section>
