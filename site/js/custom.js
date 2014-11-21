@@ -7,7 +7,7 @@
 
 /*************** GOOGLE ANALYTICS ***********/
 /*************** REPLACE WITH YOUR OWN UA NUMBER ***********/
-window.onload = function () { "use strict"; gaSSDSLoad("XXX"); }; //load after page onload
+window.onload = function () { "use strict"; gaSSDSLoad("UA-56997910-1"); }; //load after page onload
 /*************** REPLACE WITH YOUR OWN UA NUMBER ***********/
 
 
