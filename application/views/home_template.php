@@ -9,6 +9,7 @@
   <meta name="author" content="MXBIT Technology Innovations">
 <!-- Mobile Specific Metas
   ================================================== -->
+  <meta name="google-site-verification" content="j5bslVAxaIlsJwvVFZbt4raNFrUBav1mQq-10Or0tH4" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <!-- CSS
   ================================================== -->
