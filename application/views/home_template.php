@@ -150,7 +150,7 @@
               <span class="icon-bar"></span>
             </button>
             <!-- Logo -->
-            <a class="navbar-brand" href="index.html"><img src="<?php print base_url()?>site/images/main-logo.png" alt="Bakasur"/></a>
+            <a class="navbar-brand" href="javascript:(0)"><img src="<?php print base_url()?>site/images/main-logo.png" alt="Bakasur"/></a>
           </div>
 
           <div class="collapse navbar-collapse">
