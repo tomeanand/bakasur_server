@@ -384,7 +384,7 @@
                               <h3>Kiosk / Feedbacks</h3>
                               <p>Customer loyality system is an extension to the mobile app we provide. You can install this either in Tablets or in Kiosks. This service would be powerful enough to create repeat clients where we showcse your restaurant’s background and history, feedback forms, and a system to analyse customer feedback and respond to it.
                               </p>
-                              <a href="features-icons.html" target="_blank" class="btn btn-primary">Ask for demo</a>
+                              <a href="javascript:(0)" class="btn btn-primary plan_price">Ask for demo</a>
 
                             </div>
                           </div>
